@@ -1,0 +1,222 @@
+<!--
+ _____    _   _  U _____ u       ____  U _____ uU _____ u  ___
+|_ " _|  |'| |'| \| ___"|/    U /"___|u\| ___"|/\| ___"|/ / " \
+  | |   /| |_| |\ |  _|"      \| |  _ / |  _|"   |  _|"  | |"| |
+ /| |\  U|  _  |u | |___       | |_| |  | |___   | |___ /| |_| |\
+u |_|U   |_| |_|  |_____|       \____|  |_____|  |_____|U \__\_\u
+_// \\_  //   \\  <<   >>       _)(|_   <<   >>  <<   >>   \\//
+(__) (__)(_") ("_)(__) (__)     (__)__) (__) (__)(__) (__) (_(__)
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Periable is an app for Periodic Table which has a Molar Mass Calculator and Compound/Element identifier.">
+	<title>PERIABLE</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+   
+    <div id="candy-wrapper">
+        <table id="p-table">
+            <tr class="p-row">
+               <td class="element" id="H"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="space status"></td>
+               <td class="space status" id="the-box" colspan=10 rowspan=3>
+                  <div class="mode" id="trad-mode">
+                     <div class="box-data trad-data" id="box-symbol"></div>
+                     <div class="box-data trad-data" id="box-name"></div>
+                     <div class="box-data  trad-data box-row-1 box-col-1" id="box-number"></div>
+                     <div class="box-data  trad-data box-row-2 box-col-1" id="box-mass"></div>
+                     <div class="box-data  trad-data box-row-3 box-col-1" id="box-density"></div>
+                     <div class="box-data  trad-data box-row-4 box-col-1" id="box-electro"></div>
+                     <div class="box-data  trad-data box-row-1 box-col-2" id="box-melting"></div>
+                     <div class="box-data trad-data box-row-2 box-col-2" id="box-boiling"></div>
+                     <div class="box-data trad-data box-row-3 box-col-2" id="box-specific"></div>
+                     <div class="box-data trad-data" id="box-type"></div>
+                  </div>  
+                  <div class="mode" id="calc-mode" hidden>
+                     <div class="box-data calc-data" id="molecule-mass"></div>
+                     <div class="box-data calc-data" id="molecule-error"></div>
+                     <input type="text" class="box-data calc-data" id="molecule-text" placeholder="Chemical Formula">
+                     <div class="box-data calc-data" id="molecule-formula"></div>
+                     <div class="box-data calc-data" id="molecule-name"></div>
+                     <div class="box-data calc-data" id="mass-percent"></div>
+                     <div class="box-data calc-data" id="molecule-clear"></div>
+                  </div>
+                  <div class="mode" id="scale-mode" hidden>
+                     <div class="box-data" id="scale-title"></div>
+                     <div class="box-data scale-data scale-col-1 scale-row-1" id="no-scale"></div>
+                     <div class="box-data scale-data scale-col-1 scale-row-2" id="mass-scale"></div>
+                     <div class="box-data scale-data scale-col-1 scale-row-3" id="density-scale"></div>
+                     <div class="box-data scale-data scale-col-1 scale-row-4" id="electro-scale"></div>
+                     <div class="box-data scale-data scale-col-2 scale-row-1" id="melt-scale"></div>
+                     <div class="box-data scale-data scale-col-2 scale-row-2" id="boil-scale"></div>
+                     <div class="box-data scale-data scale-col-2 scale-row-3" id="specific-scale"></div>
+                     <div class="box-data" id="units"></div>
+                  </div>
+               </td>
+               
+               <td class="space status" id="nav-row" colspan=5>
+                     <div id="nav-header" class="nav-element">Function</div>
+                     <div id='trad-button' class="nav-element nav-button">Basic</div>
+                     <div id='calc-button' class="nav-element nav-button">Calculator</div>
+                     <div id='scale-button' class="nav-element nav-button">Scale</div>
+               </td>
+               <td class="element" id="He"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+            </tr>
+            <tr class="p-row">
+               <td class="element" id="Li"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Be"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+                                                               <!-- SPACE -->
+               <td class="element" id="B"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="C"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="N"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="O"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="F"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ne"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+            </tr>
+            <tr class="p-row">
+               <td class="element" id="Na"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Mg"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+                                                               <!--SPACE-->
+               <td class="element" id="Al"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Si"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="P"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="S"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Cl"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ar"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+            </tr>
+            <tr class="p-row">
+               <td class="element" id="K"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ca"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Sc"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ti"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="V"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Cr"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Mn"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Fe"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Co"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ni"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Cu"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Zn"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ga"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ge"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="As"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Se"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Br"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Kr"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+            </tr>
+            <tr class="p-row">
+               <td class="element" id="Rb"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Sr"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Y"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Zr"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Nb"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Mo"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Tc"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ru"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Rh"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Pd"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ag"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Cd"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="In"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Sn"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Sb"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Te"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="I"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Xe"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+            </tr>
+            <tr class="p-row">
+               <td class="element" id="Cs"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ba"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="space" rowspan=2></td>
+               <td class="element" id="Hf"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ta"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="W"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Re"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Os"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ir"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Pt"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Au"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Hg"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Tl"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Pb"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Bi"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Po"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="At"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Rn"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+            </tr>
+            <tr class="p-row">
+               <td class="element" id="Fr"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ra"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               
+               <td class="element" id="Rf"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Db"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Sg"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Bh"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Hs"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Mt"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ds"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Rg"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Cn"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Uut"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Fl"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Uup"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Lv"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Uus"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Uuo"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+            </tr>
+            <tr class="p-row">
+                <td class="space empty-row" colspan=2></td>
+                <td class="space empty-row" colspan=16></td>
+            </tr>
+            <tr class="p-row">
+               <td class="space" colspan=3></td>
+               <td class="element" id="La"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ce"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Pr"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Nd"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Pm"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Sm"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Eu"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Gd"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Tb"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Dy"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Ho"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Er"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Tm"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Yb"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Lu"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+            </tr>
+            <tr class="p-row">
+               <td class="space" colspan=3></td>
+               <td class="element" id="Ac"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Th"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Pa"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="U"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Np"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Pu"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Am"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Cm"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Bk"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Cf"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Es"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Fm"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Md"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="No"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+               <td class="element" id="Lr"><div class="number"></div><div class="symbol"></div><div class="mass"></div></td>
+            </tr>
+        </table>
+    </div>
+    <!-- jQuery 1.11.1 -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/chroma.min.js"></script>
+    <script src='js/app.js'></script>
+</body>
+</html>

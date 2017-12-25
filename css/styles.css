@@ -1,0 +1,258 @@
+#candy-wrapper {
+  margin: 12px 15px 0 12px; }
+
+.element {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  position: relative;
+  border: 1px solid #3e3e3e;
+  cursor: default; }
+
+.symbol, .mass, .number, .box-data {
+  line-height: 1;
+  color: #3e3e3e; }
+
+.empty-row {
+  height: 15px; }
+
+.symbol {
+  position: relative;
+  font-size: 35px;
+  font-weight: bolder;
+  text-align: center; }
+
+.number {
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  top: 4px;
+  left: 2px; }
+
+.mass {
+  position: absolute;
+  text-align: center;
+  font-size: 16px;
+  width: 72px;
+  bottom: 1px; }
+
+#the-box {
+  position: relative; }
+
+.box-data {
+  position: absolute;
+  color: #3e3e3e;
+  font-family: monospace; }
+
+.trad-data {
+  font-size: 19px; }
+
+.box-col-1 {
+  left: 200px; }
+
+.box-col-2 {
+  left: 480px; }
+
+.box-row-1 {
+  top: 30px; }
+
+.box-row-2 {
+  top: 60px; }
+
+.box-row-3 {
+  top: 90px; }
+
+.box-row-4 {
+  top: 120px; }
+
+#box-symbol {
+  font-family: Arial;
+  font-size: 95px;
+  font-weight: bold;
+  color: white;
+  bottom: 70px;
+  left: 10px; }
+
+#box-name {
+  font-family: Arial;
+  font-size: 60px;
+  bottom: 6px;
+  left: 15px; }
+
+#box-type {
+  font-size: 28px;
+  right: 5px;
+  bottom: 5px; }
+
+.data-title {
+  font-weight: bold; }
+
+.nodata {
+  color: white; }
+
+.nodata-table {
+  color: #f58989; }
+
+#molecule-mass {
+  font-size: 55px;
+  bottom: 0px;
+  left: 10px;
+  width: 580px;
+  overflow: hidden; }
+
+#molecule-text {
+  background: #f1f1f1;
+  bottom: 0;
+  right: 100px;
+  border: none;
+  height: 52px;
+  padding-left: 8px;
+  width: 350px;
+  outline: none;
+  font-size: 25px; }
+
+#molecule-formula {
+  font-size: 50px;
+  top: 95px;
+  left: 10px;
+  width: 1020px;
+  overflow: auto;
+  overflow-y: hidden; }
+
+#molecule-name {
+  width: 1040px;
+  text-align: center;
+  font-size: 60px;
+  left: 0;
+  bottom: 100px;
+  font-weight: bold; }
+
+#mass-percent {
+  width: 1000px;
+  background: #f1f1f1;
+  height: 50px;
+  top: 0;
+  text-align: center;
+  font-size: 25px;
+  left: 20px;
+  padding-top: 10px;
+  border-radius: 0 0 10px 10px;
+  overflow: auto; }
+
+#molecule-clear {
+  font-size: 30px;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  height: 52px;
+  width: 100px;
+  line-height: 52px;
+  cursor: pointer;
+  background: rgba(245, 137, 137, 0.8); }
+
+#molecule-error {
+  color: #f58989;
+  font-size: 30px;
+  bottom: 0px;
+  left: 10px;
+  width: 580px;
+  overflow: hidden; }
+
+#scale-title {
+  width: 1040px;
+  text-align: center;
+  top: 10px;
+  font-size: 60px;
+  font-weight: bold; }
+
+#units {
+  font-size: 25px;
+  font-weight: 800;
+  bottom: 5px;
+  right: 10px; }
+
+.scale-data {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  font-size: 40px;
+  font-weight: bold; }
+
+.scale-data:hover {
+  color: white; }
+
+.scale-col-1 {
+  left: 110px; }
+
+.scale-col-2 {
+  right: 110px; }
+
+.scale-row-1 {
+  bottom: 170px; }
+
+.scale-row-2 {
+  bottom: 120px; }
+
+.scale-row-3 {
+  bottom: 70px; }
+
+.scale-row-4 {
+  bottom: 20px; }
+
+.scale-box {
+  fill: #333; }
+
+#nav-row {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  color: #3e3e3e;
+  position: relative; }
+
+.nav-element {
+  position: absolute; }
+
+.nav-button {
+  bottom: 5px;
+  font-size: 20px;
+  cursor: pointer; }
+  .nav-button:hover {
+    text-decoration: underline; }
+
+#trad-button {
+  left: 30px; }
+
+#calc-button {
+  left: 165px; }
+
+#scale-button {
+  left: 300px; }
+
+#nav-header {
+  top: 5px;
+  width: 405px;
+  display: inline-block;
+  font-size: 40px;
+  text-align: center; }
+
+#git-container {
+  text-align: center;
+  margin: 30px 0; }
+  #git-container a:hover #github-icon {
+    fill: #f58989; }
+
+#github-icon {
+  fill: #3e3e3e;
+  transition: fill 0.3s ease; }
+
+#github-svg {
+  width: 64px; }
